@@ -12,14 +12,13 @@ _DISPLAY_LOGO_ = True
 
 -- Q#03
 convertRowIndex :: Char -> Int
-convertRowIndex idx = (fromEnum (toUpper idx)) - 65
+convertRowIndex idx = fromEnum (toUpper idx) - 65
 
 -- Q#04
-
+_INVALID_MOVE_ :: Move
 _INVALID_MOVE_ = (-1, -1)
 
 -- Q#05
-
 _SEP_ = ['_', '|', '_']
 
 -- Q#06
