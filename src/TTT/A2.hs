@@ -50,9 +50,9 @@ formatLine strs = _SEP_ ++ intercalate _SEP_ strs ++ _SEP_
 
 isMoveInBounds (row, col) = and inBounds
     where inBounds = [
-            row > 0,
+            row >= 0,
             row < _SIZE_,
-            col > 0,
+            col >= 0,
             col < _SIZE_
             ]
 
@@ -64,10 +64,6 @@ stringToMove [row, col] = (rowN, colN)
 
 stringToMove _ = _INVALID_MOVE_
 
-e = head _EMPTY_BOARD_
-t = last _TIED_BOARD_
-rsO = replaceSquareInRow O
-rsX = replaceSquareInRow X
 -- Q#10
 replaceSquareInRow :: Player -> Int -> Row -> Row
 replaceSquareInRow player idx row = if isValid then replaceIt else row
